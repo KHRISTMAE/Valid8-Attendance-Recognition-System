@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@100.70.139.24:5432/postgres
+    volumes:
+      - ./backend:/app
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules       # Avoids syncing host node_modules
+    command: npm run dev      
+    restart: unless-stopped
