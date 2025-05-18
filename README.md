@@ -27,27 +27,29 @@ Attendance Reports: Admins can generate event attendance reports. Students can v
 Security & Authentication: User login using credentials or Google/Facebook login. Secure API for communication between the website and backend.
 
 ### User Stories/ Use Cases
- **As a Student:**
-- I want to log in to the app using my student credentials so that I can accurately track my attendance and view the events I have participated in.
-- I want to have an email notificcation reminding for an upcoming event.
-- I would like to receive an email confirmation after checking in to ensure that my attendance is valid.
-- I want to be able to view my past attendance records for events, allowing me to track my participation over time.
 
+**As a Student:**
+- I want to log in to the app using my email and password
+- I want to track my attendance by viewing the events I have participated in.
+- I want to check whether there is an upcoming event.
+- I want to logout successfully.
+  
 **As an Student Officer:**
--I want to track my attendance and view the events I have participated in.
+- I want to track my attendance and view the events I have participated in as well as my upcoming events.
 - I want to scan students’ face using face recognition so that I can ensure accurate and efficient tracking of attendees.
+- I want to track the attendees by manual student ID entry if face recognition fails.
+- I want to logout successfully.
 
 **As an Event Organizer:**
-- I want to create a new event by entering essential details such as the event name, date, time, location, and description.
+- I want to create a new event by entering essential details such as the event name, date, time, location, and assign officer.
 - I want to easily edit or update event details whenever necessary.
-- I want to define registration limits and deadlines for my events.
-- I want to send email notifications or reminders to registered students about the event.
+- I want to delete an event.
+- I want to logout successfully.
 
 **As an Administrator:**
-- I want to manage user accounts for students, Student officer, and event organizers.
+- I want to manage user roles (Create, Read, Update, delete students, ssg-officers, event-organizer).
 - I want to oversee all events created within the system and review flagged attendance issues so that attendance accuracy is maintained.
-- I want to set permissions and access levels for different users.
-- I want to generate comprehensive reports on attendance data across all events. 
+- I want to generate and downloads attendance reports (CSV).
 
 ### Integration Requirements
 - The system should integrate with an email service provider to facilitate automated email notifications for event reminders, confirmations, and updates.
