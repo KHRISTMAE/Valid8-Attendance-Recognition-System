@@ -7,7 +7,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgresql://postgres:postgres@100.70.139.24:5432/postgres
+      - DATABASE_URL=postgresql://postgres:new_secure_password123!@100.70.139.24:5432/fastapi_db
     volumes:
       - ./backend:/app
     restart: unless-stopped
