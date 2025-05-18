@@ -46,23 +46,6 @@ Backend will be running at: http://localhost:8000
 
 These ports can be changed in the docker-compose.yml file or environment variables.
 
-📁 Folder Structure
-plaintext
-Copy
-Edit
-Valid8_ABCC/
-│
-├── backend/                    # Contains backend source code and Dockerfile
-│   ├── Dockerfile              # Builds the backend container
-│   └── [backend files]         # Backend logic, routes, config, etc.
-│
-├── frontend/                   # Contains frontend source code and Dockerfile
-│   ├── Dockerfile              # Builds the frontend container
-│   └── [frontend files]        # React/Vite components and assets
-│
-├── docker-compose.yml          # Orchestrates frontend and backend containers
-├── .env.example                # Template for environment variables
-└── README.md                   # Project documentation
 🧠 How It Works
 This project uses Docker to separate the frontend and backend into their own containers. Docker Compose handles:
 
