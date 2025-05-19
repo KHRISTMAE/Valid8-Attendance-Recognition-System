@@ -18,57 +18,52 @@ Make sure you have the following installed on your machine before running the pr
 1. **Clone the repository** to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/Valid8_ABCC.git
-Navigate to the project directory:
+   git clone https://github.com/KHRISTMAE/Valid8-Attendance-Recognition-System.git
+   cd Valid8-Attendance-Recognition-System
 
-bash
-Copy
-Edit
-cd Valid8_ABCC
-Create a .env file by copying the example file:
+ ## Create environment variables
+      ```bash
+       cp .env.example .env
+        POSTGRES_USER=admin
+        POSTGRES_PASSWORD=admin123
+        POSTGRES_DB=valid8db
+        
+ ## Build and Run the System
+ From the project root directory, build and start the containers with:
+ 
+ bash 
+- docker-compose up --build
 
-bash
-Copy
-Edit
-cp .env.example .env
-✏️ Edit the .env file if needed to adjust environment variables.
+This command will:
+- Build the Docker images for backend and frontend
+- Start the PostgreSQL database container
+- Launch backend and frontend services
+- Automatically network all containers for communication
 
-Build and run the containers using Docker Compose:
+### To stop the running containers:
+ bash 
+ - docker-compose down
 
-bash
-Copy
-Edit
-docker-compose up --build
-🌐 Access the Application
-Frontend will be available at: http://localhost:5173
+## Access the Application
 
-Backend will be running at: http://localhost:8000
+After successful startup, access the following:
 
-These ports can be changed in the docker-compose.yml file or environment variables.
+Frontend Dashboard	
+- http://localhost:3000
+Backend API Documentation
+- http://localhost:8000/docs
 
-🧠 How It Works
-This project uses Docker to separate the frontend and backend into their own containers. Docker Compose handles:
+These ports are configurable via docker-compose.yml or .env files.
 
-Building both images
+##  How It Works
+- Backend: FastAPI application serving API endpoints, facial recognition logic, and database interactions.
+- Frontend: Web dashboard interface consuming backend APIs for attendance management.
+- PostgreSQL: Database container storing all user and attendance data.
+- Docker Compose orchestrates all services for simplified local development and deployment.
 
-Running containers
+ 
 
-Networking between services
+ 
+  
 
-Backend: A Node.js/Express (or your backend stack) API that handles business logic and database interactions.
 
-Frontend: A React (or your frontend stack) application that consumes the backend API and serves the user interface.
-
-📝 Notes
-Do not commit your actual .env file — only include .env.example in the repo.
-
-For deployment (e.g., cloud), environment variables and volumes may need to be adjusted depending on your setup.
-
-👨‍🏫 For Instructor Use
-This repository is ready for deployment or demonstration. You can:
-
-Pull and run the Docker containers
-
-Review the folder structure and Docker configuration
-
-Modify the .env file and docker-compose.yml as needed for cloud deployment
