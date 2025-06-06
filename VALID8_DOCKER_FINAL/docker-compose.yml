@@ -12,13 +12,13 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./docker-data/postgresql_data:/var/lib/postgresql/data
 
   backend:
     build: ./backend
     container_name: backend_v2
     ports:
-      - "8000:8000"
+      - "9500:8000"
     environment:
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/fastapi_db
     volumes:
@@ -31,7 +31,7 @@ services:
     build: ./frontend
     container_name: frontend_v2
     ports:
-      - "5173:5173"
+      - "100:5173"
     depends_on:
       - backend
     working_dir: /app
@@ -53,5 +53,3 @@ services:
     depends_on:
       - db
 
-volumes:
-  postgres_data:
